@@ -1,5 +1,7 @@
 package starter.postcodes;
 
+import com.ibm.icu.impl.duration.impl.DataRecord;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
@@ -21,6 +23,20 @@ public class PostCodeStepDefinitions {
 
     @Then("the resulting location should be {} in {}")
     public void theResultingLocationShouldBe(String placeName, String country) {
+        restAssuredThat(response -> response.statusCode(200));
+        restAssuredThat(response -> response.body(LocationResponse.COUNTRY, equalTo(country)));
+        restAssuredThat(response -> response.body(LocationResponse.FIRST_PLACE_NAME, equalTo(placeName)));
+    }
+    @Given("user is on registration page")
+    public void userIsonRegistrationPage() {
+        restAssuredThat(response -> response.statusCode(200));
+        restAssuredThat(response -> response.body(LocationResponse.COUNTRY, equalTo(country)));
+        restAssuredThat(response -> response.body(LocationResponse.FIRST_PLACE_NAME, equalTo(placeName)));
+
+
+    }
+    @Given("user is on login page")
+    public void userIsonLoginPage() {
         restAssuredThat(response -> response.statusCode(200));
         restAssuredThat(response -> response.body(LocationResponse.COUNTRY, equalTo(country)));
         restAssuredThat(response -> response.body(LocationResponse.FIRST_PLACE_NAME, equalTo(placeName)));
