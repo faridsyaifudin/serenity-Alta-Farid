@@ -1,6 +1,5 @@
-package api.starter.postcodes;
+package stepdef.postcodes;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
@@ -24,18 +23,5 @@ public class PostCodeStepDefinitions {
         restAssuredThat(response -> response.body(LocationResponse.COUNTRY, equalTo(country)));
         restAssuredThat(response -> response.body(LocationResponse.FIRST_PLACE_NAME, equalTo(placeName)));
     }
-    @Given("user is on registration page")
-    public void userIsonRegistrationPage() {
-        restAssuredThat(response -> response.statusCode(200));
-        restAssuredThat(response -> response.body(LocationResponse.COUNTRY, equalTo(country)));
-        restAssuredThat(response -> response.body(LocationResponse.FIRST_PLACE_NAME, equalTo(placeName)));
-
 
     }
-    @Given("user is on login page")
-    public void userIsonLoginPage() {
-        restAssuredThat(response -> response.statusCode(200));
-        restAssuredThat(response -> response.body(LocationResponse.COUNTRY, equalTo(country)));
-        restAssuredThat(response -> response.body(LocationResponse.FIRST_PLACE_NAME, equalTo(placeName)));
-    }
-}

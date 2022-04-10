@@ -1,4 +1,4 @@
-package api.starter.postcodes;
+package stepdef.postcodes;
 
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Step;

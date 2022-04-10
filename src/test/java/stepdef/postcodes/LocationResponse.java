@@ -1,4 +1,4 @@
-package api.starter.postcodes;
+package stepdef.postcodes;
 
 public class LocationResponse {
     public static final String COUNTRY = "'country'";
